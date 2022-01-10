@@ -22,7 +22,7 @@ public class FizzyDrink {
 	private String manufacturer;
 	
 	@Column(nullable = false)
-	private long price;
+	private double price;
 	
 	@Column(nullable = false)
 	private String amount;
@@ -33,7 +33,7 @@ public class FizzyDrink {
 	}
 	
 	//For creating
-	public FizzyDrink(String name, String manufacturer, long price, String amount) {
+	public FizzyDrink(String name, String manufacturer, double price, String amount) {
 		super();
 		this.name = name;
 		this.manufacturer = manufacturer;
@@ -42,7 +42,7 @@ public class FizzyDrink {
 	}
 	
 	//For testing
-	public FizzyDrink(long id, String name, String manufacturer, long price, String amount) {
+	public FizzyDrink(long id, String name, String manufacturer, double price, String amount) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -76,11 +76,11 @@ public class FizzyDrink {
 		this.manufacturer = manufacturer;
 	}
 
-	public long getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(long price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
@@ -101,7 +101,9 @@ public class FizzyDrink {
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((manufacturer == null) ? 0 : manufacturer.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + (int) (price ^ (price >>> 32));
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -131,9 +133,9 @@ public class FizzyDrink {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (price != other.price)
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
 			return false;
 		return true;
-	}	
+	}
 	
 }
