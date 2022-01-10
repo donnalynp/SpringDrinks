@@ -25,7 +25,7 @@ public class FizzyDrink {
 	private long price;
 	
 	@Column(nullable = false)
-	private long amount;
+	private String amount;
 	
 	//Default constructor
 	public FizzyDrink() {
