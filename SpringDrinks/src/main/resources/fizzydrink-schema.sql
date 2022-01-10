@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS fizzy_drink CASCADE;
 CREATE TABLE `fizzy_drink` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `amount` varchar(255) DEFAULT NULL,
