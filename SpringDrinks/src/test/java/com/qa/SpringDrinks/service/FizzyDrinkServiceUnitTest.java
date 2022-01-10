@@ -1,27 +1,24 @@
 package com.qa.SpringDrinks.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.qa.SpringDrinks.domain.FizzyDrink;
 import com.qa.SpringDrinks.repo.FizzyDrinkRepo;
 
 
-@RunWith(MockitoJUnitRunner.class)
+@SpringBootTest
 public class FizzyDrinkServiceUnitTest {
 
-	@InjectMocks
+	@Autowired
 	private FizzyDrinkService service;
 		
-	@Mock
+	@MockBean
 	private FizzyDrinkRepo repo;
 		
 	@Test
