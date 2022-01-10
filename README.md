@@ -2,16 +2,16 @@
 - ## Why are we doing this? <br/>
 We are creating a Spring Boot API as the final project for the bootcamp.
 - ## How I expected the challenge to go? <br/>
-I expected the project to be more challenging as there is a lot of things to remember. I also thought that it would be harder to put the project on a repository on GitHub as this is something we have not practice very often but it has been less challenging than what I first thought to be. 
+I expected the project to be more challenging as there is a lot of things to remember. I also thought that it would be harder to put the project on a repository on GitHub as this is something we have not practiced very often but it has been less challenging than what I first thought to be. 
 - ## What went well? / What didn't go as planned? <br/>
-I run to some problems with mySQL table, I initially had ‘long’ as my data type for price and amount but later realised that I needed the price to be ‘double/decimal’ and amount to be a ‘’string so that I could add the measurement of the unit of the amount of the drinks (mainly litres). So, I had to modify the data type on mySQL workbench after changing it in my domain class. <br/>
-Towards the end, when running the Controller Integration Test, I was having some errors, my table on mySQL was already created so the test wasn’t running. I had to add a new line in the fizzydrink-schema.sql file to drop the existing table so that I could run the test. In the end, I was able to overcome all these errors.
+I ran to some problems with mySQL table, I initially had ‘long’ as my data type for price and amount but later realised that I needed the price to be ‘double/decimal’ and amount to be a ‘string’ so that I could add the measurement of the unit of the amount of the drinks (in litres). So, I had to modify the data type on mySQL workbench after changing it in my domain class. <br/>
+Towards the end, when running the Controller Integration Test, I was having some errors, my table on mySQL was already created so the test was not running. I had to add a new line in the fizzydrink-schema.sql file to drop the existing table so that I could run the test. In the end, I was able to overcome all these errors.
 - ## Possible improvements for future revisions of the project. <br/>
 Some possible improvements for future revisions of the project are:
   -	To increase the test coverage as it only goes up to 59.9%; with more practice I could try to get it up to 80% as a stretch goal.
-  -	To make use of the Jira board from the start. – I created the Jira board and updated it all in the last day. It would have been more realistic if I had created   it on the first day of the project and updated it day by day as I was doing the project.
+  -	To make use of the Jira board from the start. – I created the Jira board and updated it all in the last day. It would have been more realistic if I had created it on the first day of the project and updated it day by day as I was doing the project.
   -	To practice how to merge branches. – I had a branch called database that I wanted to merge with the dev branch, but I realised it wasn’t possible because I   originally created the databases branch from the main. At the end, I merged database with the main branch.
-- ##	Screenshots showing your postman requests and the output from the API.
+- ##	Screenshots showing my postman requests and the output from the API.
 
 POST Request - Create Id 2 
 <img width="1440" alt="POST Request - Create Id 2" src="https://user-images.githubusercontent.com/93529843/148786637-482f9208-2812-4ac9-ac32-32fe32e06115.png">
@@ -37,10 +37,10 @@ DEL Request - Delete Id 3
 GET Request - ReadAll after deleting Id 3
 <img width="1440" alt="GET Request - ReadAll after deleting Id 3" src="https://user-images.githubusercontent.com/93529843/148788032-db3868b8-5ab6-428c-8340-9a621a46d3c4.png">
 
-PUT Request - Updated Id 2
+PUT Request - Update Id 2
 <img width="1440" alt="PUT Request - Updated Id 2" src="https://user-images.githubusercontent.com/93529843/148788042-969ceec0-e437-46df-b8b0-180cc39fa0ef.png">
 
-- ## Screenshots of your database to prove that data is being persisted.
+- ## Screenshots of my database to prove that data is being persisted.
 
 Connecting to MySQL Database <br/>
 A new schema was created on MySQL workbench but the table with its columns were created by running the code on Eclipse
@@ -49,7 +49,7 @@ A new schema was created on MySQL workbench but the table with its columns were 
 End Result After Postman Requests
 <img width="1440" alt="End Result After Postman Requests" src="https://user-images.githubusercontent.com/93529843/148788473-99d3d9be-477c-4597-80bd-4f6f9cb6d977.png">
 
-- ## Screenshot of your test results, including coverage report.
+- ## Screenshot of my test results, including coverage report.
 Fizzy Drink Service Unit Test using JUnit4 Annotations
 <img width="1440" alt="Fizzy Drink Service Unit Test JUnit4 Annotations" src="https://user-images.githubusercontent.com/93529843/148788827-3c16f2d7-4567-4a3d-8bc7-84dbd6dff295.png">
 
