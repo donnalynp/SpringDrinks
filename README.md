@@ -75,5 +75,6 @@ Coverage Check
 <img width="1440" alt="Coverage check " src="https://user-images.githubusercontent.com/93529843/148789105-c3431542-124b-4a7d-9eaf-b37c592cfd25.png">
 
 - ## Link to Jira Board
-Click [here] (https://donnalyn-parocha.atlassian.net/jira/software/projects/SPRIN/boards/1/roadmap) to go to the Jira Board for this project.
+Click here to go to the Jira Board for this project:<br/>
+https://donnalyn-parocha.atlassian.net/jira/software/projects/SPRIN/boards/1/roadmap
 
