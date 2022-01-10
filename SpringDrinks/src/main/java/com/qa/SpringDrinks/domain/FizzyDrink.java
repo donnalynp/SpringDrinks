@@ -22,10 +22,10 @@ public class FizzyDrink {
 	private String manufacturer;
 	
 	@Column(nullable = false)
-	private long price;
+	private double price;
 	
 	@Column(nullable = false)
-	private long amount;
+	private String amount;
 	
 	//Default constructor
 	public FizzyDrink() {
@@ -33,7 +33,7 @@ public class FizzyDrink {
 	}
 	
 	//For creating
-	public FizzyDrink(String name, String manufacturer, long price, long amount) {
+	public FizzyDrink(String name, String manufacturer, double price, String amount) {
 		super();
 		this.name = name;
 		this.manufacturer = manufacturer;
@@ -42,7 +42,7 @@ public class FizzyDrink {
 	}
 	
 	//For testing
-	public FizzyDrink(long id, String name, String manufacturer, long price, long amount) {
+	public FizzyDrink(long id, String name, String manufacturer, double price, String amount) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -76,19 +76,19 @@ public class FizzyDrink {
 		this.manufacturer = manufacturer;
 	}
 
-	public long getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(long price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
-	public long getAmount() {
+	public String getAmount() {
 		return amount;
 	}
 
-	public void setAmount(long amount) {
+	public void setAmount(String amount) {
 		this.amount = amount;
 	}
 
@@ -97,11 +97,13 @@ public class FizzyDrink {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (amount ^ (amount >>> 32));
+		result = prime * result + ((amount == null) ? 0 : amount.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((manufacturer == null) ? 0 : manufacturer.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + (int) (price ^ (price >>> 32));
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -114,7 +116,10 @@ public class FizzyDrink {
 		if (getClass() != obj.getClass())
 			return false;
 		FizzyDrink other = (FizzyDrink) obj;
-		if (amount != other.amount)
+		if (amount == null) {
+			if (other.amount != null)
+				return false;
+		} else if (!amount.equals(other.amount))
 			return false;
 		if (id != other.id)
 			return false;
@@ -128,7 +133,7 @@ public class FizzyDrink {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (price != other.price)
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
 			return false;
 		return true;
 	}
