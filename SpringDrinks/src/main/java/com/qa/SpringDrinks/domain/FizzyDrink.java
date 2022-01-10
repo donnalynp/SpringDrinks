@@ -92,6 +92,13 @@ public class FizzyDrink {
 		this.amount = amount;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "FizzyDrink [id=" + id + ", name=" + name + ", manufacturer=" + manufacturer + ", price=" + price
+				+ ", amount=" + amount + "]";
+	}
+
 	//Hash Code and Equals
 	@Override
 	public int hashCode() {
