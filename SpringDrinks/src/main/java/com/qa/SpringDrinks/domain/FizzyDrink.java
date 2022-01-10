@@ -92,13 +92,19 @@ public class FizzyDrink {
 		this.amount = amount;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "FizzyDrink [id=" + id + ", name=" + name + ", manufacturer=" + manufacturer + ", price=" + price
+				+ ", amount=" + amount + "]";
+	}
+
 	//Hash Code and Equals
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((amount == null) ? 0 : amount.hashCode());
-		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((manufacturer == null) ? 0 : manufacturer.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		long temp;
@@ -121,8 +127,6 @@ public class FizzyDrink {
 				return false;
 		} else if (!amount.equals(other.amount))
 			return false;
-		if (id != other.id)
-			return false;
 		if (manufacturer == null) {
 			if (other.manufacturer != null)
 				return false;
@@ -137,5 +141,6 @@ public class FizzyDrink {
 			return false;
 		return true;
 	}
+
 	
 }
