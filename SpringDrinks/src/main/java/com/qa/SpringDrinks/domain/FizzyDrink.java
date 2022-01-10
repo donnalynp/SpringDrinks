@@ -105,7 +105,6 @@ public class FizzyDrink {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((amount == null) ? 0 : amount.hashCode());
-		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((manufacturer == null) ? 0 : manufacturer.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		long temp;
@@ -128,8 +127,6 @@ public class FizzyDrink {
 				return false;
 		} else if (!amount.equals(other.amount))
 			return false;
-		if (id != other.id)
-			return false;
 		if (manufacturer == null) {
 			if (other.manufacturer != null)
 				return false;
@@ -144,5 +141,6 @@ public class FizzyDrink {
 			return false;
 		return true;
 	}
+
 	
 }
